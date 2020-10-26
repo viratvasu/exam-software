@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="jumbotron">
+    <h1 style="text-align:center;">Login</h1>
+    <hr>
+    <form method="post">
+      {% csrf_token %}
+      <center><div>
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Enter Username"><hr>
+      </div></center>
+      <center><div>
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter password"><hr>
+      </div></center>
+      <center><input type="submit" value="Sign In" class="btn btn-primary"> Not having account <a href="{% url 'exam:signup'%}">SignUp</a></center>
+    </form>
+    <hr>
+    {% if messages %}
+    {% for message in messages %}
+    <center><div class="alert alert-danger" role="alert" style="display:inline-block;">
+      =>{{message}}
+    </div></center>
+    {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}

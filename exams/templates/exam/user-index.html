@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <div class="jumbotron">
+    <h1 style="text-align:center;">User HomePage</h1>
+    <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Exam</th>
+        <th scope="col">Pricing</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for exam in exams %}
+        <tr>
+          <th scope="row"><a href="{% url 'exam:write_exam' exam.id%}">{{exam}}</a></th>
+          <td>INR {{exam.price}} /-</td>
+          <td>{{exam.time_limit}} Minutues</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <img src="{% static 'logo(1).png' %}" alt="logo" style="height:100px;width:100px;">
+  <img src="{% static 'logo.png' %}" alt="logo" style="height:100px;width:100px;">
+  <img src="{% static 'logo(2).png' %}" alt="logo" style="height:100px;width:100px;">
+  <img src="{% static 'logo(3).png' %}" alt="logo" style="height:100px;width:100px;">
+{% endblock %}

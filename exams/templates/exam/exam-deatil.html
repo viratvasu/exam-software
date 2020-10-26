@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+  <a href="{% url 'exam:index'%}"><=BACK</a>
+  <h1 style="text-align:center;">{{exam}}</h1>
+  <hr>
+  <center><a href="{% url 'exam:createquestion' exam.id %}" class="btn btn-primary">Create Question</a></center>
+  <hr>
+  <ol>
+    {% for question in questions %}
+    <li><h2>{{question}}</h2>
+      <ol>
+        <li>{{question.option1}}</li>
+        <li>{{question.option2}}</li>
+        <li>{{question.option3}}</li>
+        <li>{{question.option4}}</li>
+      </ol>
+      <ul>
+        <li>solution:{{question.solution}}</li>
+      </ul>
+      <a href="{% url 'exam:updatequestion' question.id %}" class="btn btn-warning">Update</a>&nbsp&nbsp<a href="{% url 'exam:deletequestion' question.id %}" class="btn btn-danger">Delete</a>
+      <hr>
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+
+{% endblock %}

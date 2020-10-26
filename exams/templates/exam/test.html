@@ -1,0 +1,266 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>User</title>
+    <script src="{% static 'jquery/jquery.min.js'%}" charset="utf-8"></script>
+    <script src="{% static 'bootstrap/popper.min.js'%}" charset="utf-8"></script>
+    <script src="{% static 'bootstrap/bootstrap.min.js'%}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/04f3d8d1d6.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="donte-header">
+      <span><i class="fas fa-phone-alt"></i> +916302957061</span>
+      <a href="#"><i class="fas fa-hand-holding-usd"></i> Donate Now</a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0" >
+      <a class="navbar-brand" href="#"><img src="{% static 'logo(3).png' %}" alt="logo" height="70"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link nav-active" href="#"><i class="fas fa-home"></i><span>Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-address-card"></i><span>About Us</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-envelope"></i><span>Contact Us</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-images"></i><span>Gallary</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-hand-holding-usd"></i><span>Donate</span></a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-cog"></i><span>Settings</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i><span>Login</span></a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <div style="margin-top:5px;background-color:rgba(255,90,0,1);"></div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background-color:black;">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="{% static 'header.jpg' %}" alt="First slide" style="opacity:0.8;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="{% static 'header1.jpg' %}" alt="Second slide" style="opacity:0.8;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="{% static 'header2.jpg' %}" alt="Third slide" style="opacity:0.8;">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" style="background-color:rgba(255,90,0,1);color:white;padding:1rem;border-radius:30px;"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" style="background-color:rgba(255,90,0,1);color:white;padding:1rem;border-radius:30px;"></span>
+          </a>
+    </div>
+    <div class="container">
+      <div class="counts">
+        <h2>We Donated</h2>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 show-case-box">
+            <center><img src="{% static 'images/dinner.png'%}" alt=""></center><br>
+            <h4 style="text-align:center;">Food Feeded:</h4><h4 style="text-align:center;">20</h2>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 show-case-box">
+            <center><img src="{% static 'images/menstruation.png'%}" alt=""></center><br>
+            <h4 style="text-align:center;">Sanitary pads:</h4><h4 style="text-align:center;">20</h2>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 show-case-box">
+            <center><img src="{% static 'images/notebook.png'%}" alt=""></center><br>
+            <h4 style="text-align:center;">Education :</h4><h4 style="text-align:center;">20</h2>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 show-case-box">
+            <center><img src="{% static 'images/food-delivery.png'%}" alt=""></center><br>
+            <h4 style="text-align:center;">Rice and groceries:</h4><h4 style="text-align:center;">20</h2>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 show-case-box">
+            <center><img src="{% static 'images/death.png'%}" alt=""></center><br>
+            <h4 style="text-align:center;">Funerals :</h4><h4 style="text-align:center;">20</h2>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 show-case-box">
+            <center><img src="{% static 'images/tran.png'%}" alt=""></center><br>
+            <h4 style="text-align:center;">Transformation</h4><h4 style="text-align:center;">20</h2>
+          </div>
+        </div>
+      </div>
+      <div class="latest-updates">
+        <h2>Latest Updates</h2>
+        <div class="row" style="margin:0;padding:0;">
+          <div class="col-md-4 col-sm-6 col-xs-12" style="margin-top:20px;">
+            <div class="card" style="background-color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius:24px;">
+              <img class="card-img-top" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:24px;">
+              <div class="card-body" style="margin:0;padding:0;">
+                <h4 class="card-text" style="text-align:center;padding:10px;border-radius:24px;background-color:rgba(255,90,0,1);color:#fff;margin:2px;">This is Testing</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12" style="margin-top:20px;">
+            <div class="card" style="background-color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius:24px;">
+              <img class="card-img-top" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:24px;">
+              <div class="card-body" style="margin:0;padding:0;">
+                <h4 class="card-text" style="text-align:center;padding:10px;border-radius:24px;background-color:rgba(255,90,0,1);color:#fff;margin:2px;">This is Testing</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12" style="margin-top:20px;">
+            <div class="card" style="background-color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius:24px;">
+              <img class="card-img-top" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:24px;">
+              <div class="card-body" style="margin:0;padding:0;">
+                <h4 class="card-text" style="text-align:center;padding:10px;border-radius:24px;background-color:rgba(255,90,0,1);color:#fff;margin:2px;">This is Testing</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12" style="margin-top:20px;">
+            <div class="card" style="background-color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius:24px;">
+              <img class="card-img-top" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:24px;">
+              <div class="card-body" style="margin:0;padding:0;">
+                <h4 class="card-text" style="text-align:center;padding:10px;border-radius:24px;background-color:rgba(255,90,0,1);color:#fff;margin:2px;">This is Testing</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- This is for donate now purpose -->
+    <br><br><br>
+    <div style="background-image: linear-gradient(rgba(52, 58, 64, 0.57),rgba(52, 58, 64, 0.57)),url('../static/hero_1_no-text.jpg');background-size: cover;background-position: center center;background-repeat: no-repeat;background-attachment: fixed;" id="donate-section">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-5 text-center">
+            <h3 class="text-white mb-5 mt-5">Make A Donation Now! You May Change Lives Forever</h3>
+            <p><a href="#" class="btn btn-primary px-4 py-3 btn-block mb-5" style="background-color:rgba(255,90,0,1);border:none;font-size:1.5rem;">Donate Now</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- achivemetns -->
+    <h2>Our Achivements</h2>
+    <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top:30px;">
+          <div class="card" style="background-color: white;box-shadow: -20px 20px 10px rgba(0,0,0,0.3);border-radius:20px;">
+            <img class="achivement-image" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:20px;">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top:30px;">
+          <div class="card" style="background-color: white;box-shadow: -20px 20px 10px rgba(0,0,0,0.3);border-radius:20px;">
+            <img class="achivement-image" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:20px;">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top:30px;">
+          <div class="card" style="background-color: white;box-shadow: -20px 20px 10px rgba(0,0,0,0.3);border-radius:20px;">
+            <img class="achivement-image" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:20px;">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top:30px;">
+          <div class="card" style="background-color: white;box-shadow: -20px 20px 10px rgba(0,0,0,0.3);border-radius:20px;">
+            <img class="achivement-image" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:20px;">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top:30px;">
+          <div class="card" style="background-color: white;box-shadow: -20px 20px 10px rgba(0,0,0,0.3);border-radius:20px;">
+            <img class="achivement-image" src="{% static 'header2.jpg' %}" alt="Image" style="margin:0;padding:0;border-radius:20px;">
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+        <!-- our team -->
+        <!-- Section: Team v.1 -->
+  <div class="container">
+    <section class="my-5">
+
+      <!-- Section heading -->
+      <h2 class="h1-responsive font-weight-bold my-5">Our amazing team</h2>
+      <!-- Section description -->
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-5 text-center">
+          <div class="mx-auto">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle z-depth-1"alt="Sample avatar">
+          </div>
+          <h5 class="font-weight-bold mt-4 mb-3">Anna Williams</h5>
+          <p class="text-uppercase blue-text"><strong>Graphic designer</strong></p>
+        </div>
+      </div>
+      <!-- Grid row -->
+    </section>
+    <!-- Section: Team v.1 -->
+  </div>
+<!-- footer -->
+<footer class="page-footer font-small blue-grey lighten-5">
+            <div style="background-color: #ff6600">
+                <div class="container">
+                    <div class="row py-4 d-flex align-items-center">
+                        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                            <h6 class="mb-0">Get connected with us on social networks!</h6>
+                        </div>
+                        <div class="col-md-6 col-lg-7 text-center text-md-right">
+                            <a class="fb-ic" href="#" style="color:black;"> <i class="fab fa-facebook-f white-text mr-4"> </i> </a> <a class="tw-ic" href="#" style="color:black;"> <i class="fab fa-twitter white-text mr-4"> </i> </a> <!-- Google +--> <a class="gplus-ic" href="#" style="color:black;"> <i class="fab fa-google-plus-g white-text mr-4"> </i> </a> <!--Linkedin --> <a class="li-ic" href="#" style="color:black;"> <i class="fab fa-linkedin-in white-text mr-4"> </i> </a> <!--Instagram--> <a class="ins-ic" href="#" style="color:black;"> <i class="fab fa-instagram white-text"> </i> </a>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row-->
+                </div>
+            </div>
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3 dark-grey-text">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase font-weight-bold">Coding Club</h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>Coding Club is an autonomous Club.Interested students can learn programming in this club can do projects assigned by mentor</p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p> <i class="fas fa-home mr-3"></i>IIIT-RGUKT RKVALLEY,KADAPA,AP-516330</p>
+                        <p> <i class="fas fa-envelope mr-3"></i>codingclub@gmail.com</p>
+                        <p> <i class="fas fa-phone mr-3"></i> +91 xxxxxxxxxx</p>
+                    </div>
+                </div>
+                <!-- Grid row -->
+            </div>
+            <!-- Footer Links --> <!-- Copyright -->
+            <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright: <a class="dark-grey-text" href="#">CodingClub.com</a> </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+</body>
+</html>

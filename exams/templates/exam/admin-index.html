@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+  <h1 style="text-align:center;">Admin</h1>
+  <h1>All Exams</h1>
+
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Exam</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for exam in exams %}
+      <tr>
+        <th scope="row"><a href="{% url 'exam:exam_detail' exam.id %}">{{exam}}</a></th>
+        <td><a href="{% url 'exam:updateexam' exam.id %}" class="btn btn-warning">Update</a></td>
+        <td><a href="{% url 'exam:deleteexam' exam.id %}" class="btn btn-danger">Delete</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<center><a href="{% url 'exam:createexam'%}" class="btn btn-primary">Create Exam</a></center>
+</div>
+
+{% endblock %}

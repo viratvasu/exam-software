@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+  <center><h1 id="demo"></h1></center>
+  <hr>
+  <form method="post" name="theForm">
+    {% csrf_token %}
+    <ol>
+      {% for question in questions %}
+      <li>
+        <label>{{question.name}}</label><br>
+        <input type="radio" name="{{question.id}}" value="1"><label>{{question.option1}}</label><br>
+        <input type="radio" name="{{question.id}}" value="2"><label>{{question.option2}}</label><br>
+        <input type="radio" name="{{question.id}}" value="3"><label>{{question.option3}}</label><br>
+        <input type="radio" name="{{question.id}}" value="4"><label>{{question.option4}}</label><br>
+        <hr>
+      </li>
+      {% endfor %}
+    </ol>
+    <input type="submit" value="Submit" class="btn btn-primary">
+    <!-- <button onclick="submitForm()">Submit</button> -->
+  </form>
+</div>
+<script>
+  function submitForm()
+  {
+    document.theForm.submit();
+  }
+// Update the count down every 1 second
+var time=10;
+var x = setInterval(function() {
+  // Time calculations for days, hours, minutes and seconds
+  var minutes = Math.floor(time/60);
+  var seconds = time - minutes * 60;
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML ="Time Left "+ minutes + ":" + seconds + " Min";
+  time=time-1;
+
+  // If the count down is over, write some text
+  if (time < 0) {
+    clearInterval(x);
+    document.theForm.submit();
+  }
+}, 1000);
+</script>
+{% endblock %}

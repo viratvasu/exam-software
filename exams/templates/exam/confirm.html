@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Do you want to delete <a href="#"">{{exam}}</a> {{theme}} ??</h1>
+  <hr>
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Yes" style="margin-left:50px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="{% url 'exam:index' %}" class="btn btn-primary">No</a>
+  </form>
+</div>
+{% endblock %}

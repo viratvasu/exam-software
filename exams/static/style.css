@@ -1,0 +1,103 @@
+body
+{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 400;
+}
+h2
+{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 700;
+	margin:20px 0 40px 0;
+	position:relative;
+}
+h2::before
+{
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	width: 100px;
+	height: 4px;
+	border-radius: 2px;
+	background: #ff5a00;
+}
+.nav-link
+{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 700;
+	display:flex;
+	flex-direction:column;
+	color:#fff;
+	margin:5px;
+	text-align: center;
+	transition:background 0.5s,border-radius 0.7s;
+}
+.nav-link:hover
+{
+	color:#fff;
+	background:linear-gradient(270deg, rgba(255,90,0,1) 0%, rgba(255,54,0,1) 100%);
+	border-radius: 24px;
+}
+.nav-active
+{
+	background:linear-gradient(270deg, rgba(255,90,0,1) 0%, rgba(255,54,0,1) 100%);
+	border-radius: 24px;
+	padding:10px 12px;
+}
+.donte-header
+{
+	height:50px;
+	background-color:rgba(255,90,0,1);
+	display:flex;
+	align-items: center;
+	justify-content:space-between;
+}
+.donte-header a,.donte-header span
+{
+	color:black;
+	border-radius: 24px;
+	background:white;
+	padding:10px;
+	margin:0 10px;
+	text-decoration: none;
+	transition:background-color 0.5s,color 0.7s;
+}
+.donte-header a:hover
+{
+	background-color:black;
+	color:white;
+}
+.carousel-indicators li
+{
+	background-color:rgba(255,90,0,1);
+	padding:1px;
+}
+.carousel-control-prev,.carousel-control-next
+{
+	margin:100px 0;
+	border-radius:60px;
+}
+.show-case-box
+{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 700;
+	margin:20px;
+	padding:10px 0;
+	border-radius:24px;
+	background: #ecf2f5;
+	color: #fff;
+	background:linear-gradient(270deg, rgba(255,90,0,1) 0%, rgba(255,54,0,1) 100%);
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.19);
+}
+.achivement-image
+	{
+		max-width:100%;
+		max-height:100%;
+		height:75vh;
+	}
+	@media screen and (max-width: 600px) {
+		.achivement-image
+		{
+			 height:60vh;
+		}
+}
